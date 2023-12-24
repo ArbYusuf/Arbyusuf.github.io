@@ -1,7 +1,6 @@
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://raw.githubusercontent.com/ArbYusuf/Website-Template/main/mainbg.gif') no-repeat center center fixed;
-            background-size: cover;
-        }
-  
+body {
+   background-image: url(https://raw.githubusercontent.com/ArbYusuf/Website-Template/main/mainbg.gif);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center center;
+}
