@@ -1,0 +1,25 @@
+.navbar {
+  display: flex;
+  background-color: #333;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: #555;
+  color: #fff;
+  padding-bottom: 15px;
+}
+
+.navbar a:first-child {
+  padding-left: 30px;
+}
+
+.navbar a:last-child {
+  padding-right: 30px;
+}
