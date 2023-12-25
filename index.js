@@ -2,10 +2,11 @@ import express from "express";
 import http from "http";
 import createBareServer from "@tomphttp/bare-server-node";
 import path from "path";
-import * as dotenv from "dotenv";
+import dotenv from "dotenv";
+
 dotenv.config();
 
-const __dirname = process.cwd();
+const __dirname = path.resolve();
 const app = express();
 const server = http.createServer(app);
 const bareServer = createBareServer("/bare/");
@@ -34,6 +35,7 @@ app.get("/settings", (req, res) => {
   res.sendFile(path.join(__dirname, "static", "settings.html"));
 });
 
+
 server.on("request", (req, res) => {
   if (bareServer.shouldRoute(req)) {
     bareServer.routeRequest(req, res);
@@ -50,10 +52,6 @@ server.on("upgrade", (req, socket, head) => {
   }
 });
 
-server.on("listening", () => {
+server.listen(process.env.PORT, () => {
   console.log(`Snorlax's Cave listening on port ${process.env.PORT}`);
-});
-
-server.listen({
-  port: process.env.PORT,
 });
