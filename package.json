@@ -1,8 +1,26 @@
-{ "name": "AstromicGames", 
-"version": "1.0.0", 
-"description": "AstroGames, An alternative scientific learning website, play educational games, learn about our galaxy, plants, cells, and more for free!",
- "main": "index.js", 
-"scripts": { "start": "node index.js" }, 
-"author": "ArbYusuf", 
-"license": "MIT", 
-"dependencies": { "express": "^4.17.1" } }
+{
+    "name": "astro",
+    "version": "1.0.0",
+    "description": "ASTRO",
+    "type": "module",
+    "engines": {
+      "npm": ">=7.0.0",
+      "node": ">=16.0.0"
+    },
+    "scripts": {
+      "start": "node index.js"
+    },
+    "keywords": [
+      "proxy"
+    ],
+    "author": "",
+    "license": "GPL-3.0-or-later",
+    "dependencies": {
+      "@tomphttp/bare-server-node": "^1.2.6",
+      "express": "^4.18.2"
+    },
+    "devDependencies": {
+      "eslint": "^8.36.0",
+      "prettier": "^2.8.4"
+    }
+  }
