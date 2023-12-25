@@ -1,44 +1,71 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>AstroGames</title>
-<link rel="icon" href="https://avatars.githubusercontent.com/u/154569329?s=400&u=d8cb983206c2c4c323170a33cc276608248a6d11&v=4" type="image/x-icon">
-<link rel="stylesheet" href="assets/css/Navbar.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/proxy.css">
-<link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
-<style>
+    <meta name="description" content="Welcome to ASTRO, Welcome to the Future!" />
+    <title>Proxy | Astro</title>
+    <link rel="icon"
+        href="https://avatars.githubusercontent.com/u/154569329?s=400&u=d8cb983206c2c4c323170a33cc276608248a6d11&v=4"
+        type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <style>
         h5 {
             font-size: 18px;
             color: white;
         }
-</style>
+    </style>
 </head>
+
 <body>
-<!-- Start of Nav -->
+    <!-- Start of Nav -->
     <div class="navbar">
-        <a href="index.html" class="navbar-brand">AstroGames</a>
+        <a href="/" class="navbar-brand">AstroGames</a>
         <ul class="navbar-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="games.html">Games</a></li>
-            <li><a href="apps.html">Apps</a></li>
-            <li><a class="active" href="proxy.html">Proxy</a></li>
-            <li><a href="settings.html">Settings</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/games">Games</a></li>
+            <li><a href="/apps">Apps</a></li>
+            <li><a class="active" href="/proxy">Proxy</a></li>
+            <li><a href="/settings">Settings</a></li>
         </ul>
     </div>
-<!-- End -->
+    <!-- End -->
 
-<!-- Star page Edit ↓ -->
+    <!-- Star page Edit ↓ -->
 
-<br>
-<br>
-<!-- W snorlax.site for proxy, checkem out -->
-    <center><form class="proxyform">
-    <h1 style="font-size:33px;color:white;">Proxy</h1>
     <br>
-    <input class="proxy" placeholder="Type URL or search query" style="color:white;"></input>
-  </form><center>
-  <script src="/assets/js/index.js"></script>
-  <script src="/uv/uv.bundle.js"></script>
-  <script src="/uv/uv.config.js"></script>
+    <br>
+    <br>
+    <!-- W snorlax.site for proxy, checkem out -->
+    <center>
+        <form class="proxyform">
+            <h1 style="font-size:50px;color:black;">Proxy</h1>
+            <input class="proxy" placeholder="Type URL or search query" style="color:rgb(0, 0, 0);"></input>
+        </form>
+        <center>
+            <script src="/assets/js/index.js"></script>
+            <script src="/uv/uv.bundle.js"></script>
+            <script src="/uv/uv.config.js"></script>
+<script>
+    function setPanicKey() {
+        var panicKey = document.getElementById("panicKey").value;
+        var panicUrl = document.getElementById("panicUrl").value;
+
+        if (!panicUrl.startsWith("https://")) {
+            panicUrl = "https://" + panicUrl;
+        }
+
+        localStorage.setItem("panicKey", panicKey);
+        localStorage.setItem("panicUrl", panicUrl);
+    }
+    document.addEventListener("keydown", function (event) {
+        var storedPanicKey = localStorage.getItem("panicKey");
+        var storedPanicUrl = localStorage.getItem("panicUrl");
+
+        if (event.key === storedPanicKey && storedPanicUrl) {
+            window.location.replace(storedPanicUrl);
+        }
+    });
+</script>
+</body>
 <html>
