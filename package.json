@@ -1,6 +1,6 @@
-{ "name": "my-app", 
+{ "name": "AstromicGames", 
 "version": "1.0.0", 
-"description": "AstroGames, A alternative scientific learning ",
+"description": "AstroGames, An alternative scientific learning website, play educational games, learn about our galaxy, plants, cells, and more for free!",
  "main": "index.js", 
 "scripts": { "start": "node index.js" }, 
 "author": "ArbYusuf", 
