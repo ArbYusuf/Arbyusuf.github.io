@@ -5,4 +5,19 @@ The platform offers a selection of games that you are able to request . We also 
 a great feauture is our settings, you are able to disguise your tab as a google drive and a panic key. We also have <br>
 a built-in proxy that you can search the web safely and secretly.<p>
 <hr>
-<h>Deployments<h>
+  <h2>Quick Web Deployment</h2>
+
+
+
+<br>
+  <hr>
+  <h2>Terminal Deployment</h2>
+</div>
+
+> [!NOTE]
+> We require a NodeJS version >=18.
+
+1. Clone the repo to your machine: `git clone https://github.com/.git && cd Polaris`
+2. Install Dependencies: `npm install`
+3. Start the app: `npm start`
+4. Visit [localhost:8080](http://localhost:8080) for your local Polaris!
