@@ -1,23 +1,87 @@
 <!DOCTYPE html>
 <html>
-<title>AstroGames</title>
+<meta name="description" content="Welcome to ASTRO, Welcome to the Future!" />
+<title>Home | Astro</title>
 <link rel="icon" href="https://avatars.githubusercontent.com/u/154569329?s=400&u=d8cb983206c2c4c323170a33cc276608248a6d11&v=4" type="image/x-icon">
-<link rel="stylesheet" href="assets/css/Navbar.css">
-<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
 <!-- Start of Nav -->
+<body>
 <div class="navbar">
-    <a href="index.html" class="navbar-brand">AstroGames</a>
+    <a href="/" class="navbar-brand">AstroGames</a>
     <ul class="navbar-menu">
-      <li><a class="active" href="index.html">Home</a></li>
-      <li><a href="games.html">Games</a></li>
-      <li><a href="apps.html">Apps</a></li>
-      <li><a href="proxy.html">Proxy</a></li>
-      <li><a href="settings.html">Settings</a></li>
+      <li><a class="active" href="/">Home</a></li>
+      <li><a href="/games">Games</a></li>
+      <li><a href="/apps">Apps</a></li>
+      <li><a href="/proxy">Proxy</a></li>
+      <li><a href="/settings">Settings</a></li>
     </ul>
   </div>
 <!-- End -->
 <!-- Star page Edit ↓ -->
 <br>
 <br>
-<center><big><h1 style="color:white">Welcome to Astrogames</h1><center>
+<br>
+<!-- W snorlax.site for proxy, checkem out -->
+<div class="proxyform">
+<h1>Welcome to ASTRO!<h1>
+<p style="font-size:20px;color:black;">Welcome to ASTRO, Welcome to the Future!</p>
+</div>
+<script>
+      function checkPopups() {
+      var newWin = window.open("", "", "width=100, height=100");
+      if (newWin) {
+        newWin.close();
+        return true;
+      } else {
+        say1();
+        return false;
+      }
+    }
+
+    function say1() {
+      alert("HELL0! for auto cloaking in about:blank please allow pop ups!");
+    }
+
+    window.addEventListener('load', function () {
+      var currentUrl = window.location.href;
+      var bgUrl = localStorage.getItem('backgroundImage');
+      if (currentUrl !== "about:blank" && !sessionStorage.getItem('tabOpened')) {
+        if (checkPopups()) {
+          sessionStorage.setItem('tabOpened', 'true');
+          var win = window.open('about:blank', '_blank');
+          win.document.write("<html style='height:100%; margin:0; padding:0;'><body style='height:100%; margin:0; padding:0;'><iframe src='" + currentUrl + "' style='width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;'></iframe></body></html>");
+          win.onbeforeunload = function () {
+            sessionStorage.removeItem('tabOpened');
+          };
+          window.close();
+        } else if (!sessionStorage.getItem('alertShown')) {
+          sessionStorage.setItem('alertShown', 'true');
+        }
+      }
+    });
+</script>
+<script>
+  function setPanicKey() {
+      var panicKey = document.getElementById("panicKey").value;
+      var panicUrl = document.getElementById("panicUrl").value;
+
+      if (!panicUrl.startsWith("https://")) {
+          panicUrl = "https://" + panicUrl;
+      }
+
+      localStorage.setItem("panicKey", panicKey);
+      localStorage.setItem("panicUrl", panicUrl);
+  }
+  document.addEventListener("keydown", function (event) {
+      var storedPanicKey = localStorage.getItem("panicKey");
+      var storedPanicUrl = localStorage.getItem("panicUrl");
+
+      if (event.key === storedPanicKey && storedPanicUrl) {
+          window.location.replace(storedPanicUrl);
+      }
+  });
+</script>
+</body>
+</html>
+
