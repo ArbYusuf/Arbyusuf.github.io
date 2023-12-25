@@ -1,4 +1,4 @@
-## AstroGames
+<center>##AstroGames<center>
 <b><hr>
 <p>AstroGames is a gaming platform that provides a wide rarity of unblocked games&apps for users to enjoy. <br>
 The platform offers a selection of games that you can request. We also have apps that are unblocked, <br>
