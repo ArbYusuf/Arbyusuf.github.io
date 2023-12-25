@@ -21,19 +21,18 @@ app.use(express.static(path.join(__dirname, "static")));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "static", "index.html"));
 });
-app.get("/science", (req, res) => {
-  res.sendFile(path.join(__dirname, "static", "apps.html"));
-});
-app.get("/math", (req, res) => {
+app.get("/games", (req, res) => {
   res.sendFile(path.join(__dirname, "static", "games.html"));
 });
-app.get("/english", (req, res) => {
+app.get("/apps", (req, res) => {
+  res.sendFile(path.join(__dirname, "static", "apps.html"));
+});
+app.get("/proxy", (req, res) => {
   res.sendFile(path.join(__dirname, "static", "proxy.html"));
 });
 app.get("/settings", (req, res) => {
   res.sendFile(path.join(__dirname, "static", "settings.html"));
 });
-
 
 server.on("request", (req, res) => {
   if (bareServer.shouldRoute(req)) {
@@ -52,7 +51,7 @@ server.on("upgrade", (req, socket, head) => {
 });
 
 server.on("listening", () => {
-  console.log(`Snorlax's Cave listening on port 8080 ${process.env.PORT}`);
+  console.log(`ASTRO listening on port 8080 ${process.env.PORT}`);
 });
 
 server.listen({
